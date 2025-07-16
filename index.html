@@ -5,21 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dungeon Developer Reference</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #222; margin: 0; padding: 0; }
-    .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 32px; }
-    h1, h2, h3 { color: #2d3e50; }
-    nav { margin-bottom: 32px; }
-    nav a { color: #3b6ea5; text-decoration: none; margin-right: 18px; font-weight: 500; }
-    nav a:hover { text-decoration: underline; }
-    ul { margin-top: 0; }
-    .main-table { border-collapse: collapse; width: 100%; margin-bottom: 32px; }
-    .main-table th, .main-table td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
-    .main-table th { background: #e9ecef; }
-    .main-table tr:nth-child(even) { background: #f4f6f8; }
-    .note { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 12px 18px; margin: 24px 0; border-radius: 6px; }
-    @media (max-width: 600px) { .container { padding: 10px; } .main-table th, .main-table td { font-size: 0.95em; } }
-  </style>
 </head>
 <body>
   <div class="container">
@@ -28,12 +13,13 @@
       <a href="Tiered_Goblins_Reference.html">Goblins Reference</a>
       <a href="Tiered_Skeletons_Reference.html">Skeletons Reference</a>
       <a href="mob_tier_extra_stats_and_skills.html">Extra Stats & Skills</a>
+      <button id="theme-toggle" style="float:right; margin-left:20px; background:none; border:none; color:var(--nav-link); font-size:1.1em; cursor:pointer;">🌙</button>
     </nav>
     <h1>Dungeon Developer Reference</h1>
     <div class="note">
       <b>Welcome!</b> This site is a reference for dungeon developers and server staff working with MythicMobs and custom mob packs. Use the links above to navigate between guides.
     </div>
-    <h2>Mob Tier Reference Table</h2>
+    <h2>Mob Tier Reference Table (only example enemy types)</h2>
     <table class="main-table">
       <tr><th>Tier</th><th>Recommended Player Level</th><th>Mob Examples</th></tr>
       <tr><td>Common</td><td>1-10</td><td>Skeleton Grunt, Goblin Scout</td></tr>
@@ -56,9 +42,44 @@
       <li>Use the recommended player levels as a guideline for dungeon/area design.</li>
       <li>Test new mobs and skills in isolation before adding to live dungeons.</li>
     </ul>
-    <footer style="margin-top:40px; color:#888; font-size:0.97em; text-align:center;">
+    <footer>
       &copy; 2024 Dungeon Developer Docs.
     </footer>
   </div>
+<script>
+(function() {
+  const body = document.body;
+  const toggleBtn = document.getElementById('theme-toggle');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  function setTheme(theme) {
+    body.classList.remove('theme-dark', 'theme-light');
+    if (theme === 'dark') {
+      body.classList.add('theme-dark');
+      toggleBtn.textContent = '🌙';
+    } else {
+      body.classList.add('theme-light');
+      toggleBtn.textContent = '☀️';
+    }
+  }
+  function getSavedTheme() {
+    return localStorage.getItem('theme');
+  }
+  function saveTheme(theme) {
+    localStorage.setItem('theme', theme);
+  }
+  function getCurrentTheme() {
+    const saved = getSavedTheme();
+    if (saved) return saved;
+    return prefersDark ? 'dark' : 'light';
+  }
+  setTheme(getCurrentTheme());
+  toggleBtn.onclick = function() {
+    const current = body.classList.contains('theme-dark') ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    saveTheme(next);
+  };
+})();
+</script>
 </body>
 </html> 

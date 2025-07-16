@@ -5,22 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mob Tier Extra Stats & Skills</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #222; margin: 0; padding: 0; }
-    .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 32px; }
-    h1, h2, h3 { color: #2d3e50; }
-    nav { margin-bottom: 32px; }
-    nav a { color: #3b6ea5; text-decoration: none; margin-right: 18px; font-weight: 500; }
-    nav a:hover { text-decoration: underline; }
-    table { border-collapse: collapse; width: 100%; margin-bottom: 32px; }
-    th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
-    th { background: #e9ecef; }
-    tr:nth-child(even) { background: #f4f6f8; }
-    .note { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 12px 18px; margin: 24px 0; border-radius: 6px; }
-    ul { margin-top: 0; }
-    code { background: #f1f1f1; padding: 2px 6px; border-radius: 4px; font-size: 0.98em; }
-    @media (max-width: 600px) { .container { padding: 10px; } th, td { font-size: 0.95em; } }
-  </style>
 </head>
 <body>
   <div class="container">
@@ -29,13 +13,14 @@
       <a href="Tiered_Goblins_Reference.html">Goblins Reference</a>
       <a href="Tiered_Skeletons_Reference.html">Skeletons Reference</a>
       <a href="mob_tier_extra_stats_and_skills.html">Extra Stats & Skills</a>
+      <button id="theme-toggle" style="float:right; margin-left:20px; background:none; border:none; color:var(--nav-link); font-size:1.1em; cursor:pointer;">🌙</button>
     </nav>
     <h1>Mob Tier Extra Stats & Skills</h1>
     <div class="note">
       <b>How to Use:</b> This page details the extra stats and skills that are typically added to mobs as they increase in tier. Use this as a guideline for balancing and designing new mobs.
     </div>
     <h2>Extra Stats by Tier</h2>
-    <table>
+    <table class="main-table">
       <tr><th>Tier</th><th>Health Bonus</th><th>Damage Bonus</th><th>Defense Bonus</th><th>Speed Bonus</th></tr>
       <tr><td>Common</td><td>None</td><td>None</td><td>None</td><td>None</td></tr>
       <tr><td>Rare</td><td>+20-40%</td><td>+10-20%</td><td>+10%</td><td>+5%</td></tr>
@@ -45,7 +30,7 @@
       <tr><td>Ascended</td><td>+400%+</td><td>+250%+</td><td>+50%+</td><td>+25%+</td></tr>
     </table>
     <h2>Typical Skills by Tier</h2>
-    <table>
+    <table class="main-table">
       <tr><th>Tier</th><th>Skill Examples</th></tr>
       <tr><td>Common</td><td>None or very basic (e.g., <code>Leap</code>, <code>Simple Arrow</code>)</td></tr>
       <tr><td>Rare</td><td>Minor buffs, weak debuffs, simple AoE</td></tr>
@@ -65,5 +50,40 @@
       &copy; 2024 Dungeon Developer Docs. | <a href="index.html">Back to Home</a>
     </footer>
   </div>
+<script>
+(function() {
+  const body = document.body;
+  const toggleBtn = document.getElementById('theme-toggle');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  function setTheme(theme) {
+    body.classList.remove('theme-dark', 'theme-light');
+    if (theme === 'dark') {
+      body.classList.add('theme-dark');
+      toggleBtn.textContent = '🌙';
+    } else {
+      body.classList.add('theme-light');
+      toggleBtn.textContent = '☀️';
+    }
+  }
+  function getSavedTheme() {
+    return localStorage.getItem('theme');
+  }
+  function saveTheme(theme) {
+    localStorage.setItem('theme', theme);
+  }
+  function getCurrentTheme() {
+    const saved = getSavedTheme();
+    if (saved) return saved;
+    return prefersDark ? 'dark' : 'light';
+  }
+  setTheme(getCurrentTheme());
+  toggleBtn.onclick = function() {
+    const current = body.classList.contains('theme-dark') ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    saveTheme(next);
+  };
+})();
+</script>
 </body>
 </html> 
