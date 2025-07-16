@@ -287,15 +287,13 @@ footer {
     box-sizing: border-box;
   }
   .main-table td {
-    display: flex;
+    display: block;
     width: 100%;
     max-width: 100%;
     font-size: 1.04em;
     padding: 10px 12px 10px 10px;
     border: none;
     border-bottom: 1px solid #353a44;
-    align-items: flex-start;
-    gap: 10px;
     background: none;
     box-sizing: border-box;
   }
@@ -306,10 +304,8 @@ footer {
     content: attr(data-label);
     font-weight: 700;
     color: var(--table-th-text);
-    min-width: 110px;
-    display: inline-block;
-    margin-right: 10px;
-    flex-shrink: 0;
+    display: block;
+    margin-bottom: 2px;
     font-size: 0.93em;
     text-transform: uppercase;
     letter-spacing: 0.01em;
