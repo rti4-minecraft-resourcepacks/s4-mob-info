@@ -263,6 +263,13 @@ footer {
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     background: var(--table-bg);
   }
+  .main-table {
+    min-width: 500px; /* allow more compact tables */
+    font-size: 0.97em;
+  }
+  .main-table th, .main-table td {
+    padding: 4px 6px; /* reduce padding for compactness */
+  }
   .main-table.stacked-mobile,
   .main-table.stacked-mobile thead,
   .main-table.stacked-mobile tbody,
