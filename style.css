@@ -217,9 +217,10 @@ footer {
 }
 @media (max-width: 600px) {
   .container {
-    padding: 10px;
-    margin: 10px auto;
-    max-width: 100vw;
+    width: 96vw;
+    max-width: 96vw;
+    padding: 6vw 2vw;
+    margin: 12px auto;
     box-sizing: border-box;
     left: 0;
     right: 0;
@@ -228,7 +229,12 @@ footer {
     flex-direction: column;
     align-items: stretch;
     gap: 10px;
-    padding: 10px 6px;
+    padding: 8px 2vw;
+    border-radius: 10px;
+    border: 1.5px solid rgba(120,120,120,0.13);
+    background: linear-gradient(120deg, var(--table-bg) 90%, rgba(126,217,87,0.04) 100%);
+    margin: 0 0 18px 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
   }
   .nav-links {
     flex-direction: column;
