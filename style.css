@@ -273,8 +273,9 @@ footer {
     display: block;
     width: 100%;
   }
-  .main-table thead {
-    display: none;
+  .main-table thead,
+  .main-table th {
+    display: none !important;
   }
   .main-table tr {
     margin-bottom: 16px;
