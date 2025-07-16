@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mob Tier Extra Stats & Skills</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #222; margin: 0; padding: 0; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 32px; }
+    h1, h2, h3 { color: #2d3e50; }
+    nav { margin-bottom: 32px; }
+    nav a { color: #3b6ea5; text-decoration: none; margin-right: 18px; font-weight: 500; }
+    nav a:hover { text-decoration: underline; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 32px; }
+    th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; }
+    th { background: #e9ecef; }
+    tr:nth-child(even) { background: #f4f6f8; }
+    .note { background: #e3f2fd; border-left: 4px solid #2196f3; padding: 12px 18px; margin: 24px 0; border-radius: 6px; }
+    ul { margin-top: 0; }
+    code { background: #f1f1f1; padding: 2px 6px; border-radius: 4px; font-size: 0.98em; }
+    @media (max-width: 600px) { .container { padding: 10px; } th, td { font-size: 0.95em; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="Tiered_Goblins_Reference.html">Goblins Reference</a>
+      <a href="Tiered_Skeletons_Reference.html">Skeletons Reference</a>
+      <a href="mob_tier_extra_stats_and_skills.html">Extra Stats & Skills</a>
+    </nav>
+    <h1>Mob Tier Extra Stats & Skills</h1>
+    <div class="note">
+      <b>How to Use:</b> This page details the extra stats and skills that are typically added to mobs as they increase in tier. Use this as a guideline for balancing and designing new mobs.
+    </div>
+    <h2>Extra Stats by Tier</h2>
+    <table>
+      <tr><th>Tier</th><th>Health Bonus</th><th>Damage Bonus</th><th>Defense Bonus</th><th>Speed Bonus</th></tr>
+      <tr><td>Common</td><td>None</td><td>None</td><td>None</td><td>None</td></tr>
+      <tr><td>Rare</td><td>+20-40%</td><td>+10-20%</td><td>+10%</td><td>+5%</td></tr>
+      <tr><td>Elite</td><td>+60-100%</td><td>+30-50%</td><td>+20%</td><td>+10%</td></tr>
+      <tr><td>Champion</td><td>+120-180%</td><td>+60-90%</td><td>+30%</td><td>+15%</td></tr>
+      <tr><td>Mythic</td><td>+200-300%</td><td>+120-180%</td><td>+40%</td><td>+20%</td></tr>
+      <tr><td>Ascended</td><td>+400%+</td><td>+250%+</td><td>+50%+</td><td>+25%+</td></tr>
+    </table>
+    <h2>Typical Skills by Tier</h2>
+    <table>
+      <tr><th>Tier</th><th>Skill Examples</th></tr>
+      <tr><td>Common</td><td>None or very basic (e.g., <code>Leap</code>, <code>Simple Arrow</code>)</td></tr>
+      <tr><td>Rare</td><td>Minor buffs, weak debuffs, simple AoE</td></tr>
+      <tr><td>Elite</td><td>Moderate AoE, crowd control, self-heal, moderate buffs</td></tr>
+      <tr><td>Champion</td><td>Strong AoE, summoning, strong debuffs, shield skills</td></tr>
+      <tr><td>Mythic</td><td>Multiple strong skills, phase changes, high-impact abilities</td></tr>
+      <tr><td>Ascended</td><td>Boss-level skills, invulnerability phases, resurrection, unique mechanics</td></tr>
+    </table>
+    <h2>Best Practices</h2>
+    <ul>
+      <li>Gradually introduce new mechanics as players progress through tiers.</li>
+      <li>Ensure higher-tier mobs feel distinct and challenging, not just stat increases.</li>
+      <li>Test new skills in isolation before adding to boss encounters.</li>
+      <li>Document all custom skills for future reference.</li>
+    </ul>
+    <footer style="margin-top:40px; color:#888; font-size:0.97em; text-align:center;">
+      &copy; 2024 Dungeon Developer Docs. | <a href="index.html">Back to Home</a>
+    </footer>
+  </div>
+</body>
+</html> 
