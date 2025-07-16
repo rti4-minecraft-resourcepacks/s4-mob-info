@@ -1,9 +1,3 @@
-html, body {
-  overflow-x: hidden;
-}
-*, *::before, *::after {
-  box-sizing: border-box;
-}
 .container {
   max-width: 1100px;
   margin: 40px auto;
@@ -23,10 +17,26 @@ nav {
   gap: 18px;
   justify-content: space-between;
 }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: var(--container-bg);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  padding: 32px;
+}
 .table-responsive {
   width: 100%;
   overflow-x: auto;
 }
+
 :root {
   --bg: #23272e;
   --container-bg: #23272e;
@@ -201,34 +211,6 @@ nav a:hover {
 .rec-player-level {
   display: block;
   margin-bottom: 7px;
-}
-@media (max-width: 600px) {
-  .container { padding: 10px; }
-  .main-table th, .main-table td { font-size: 0.95em; }
-  .main-table { min-width: 500px; }
-  nav {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding: 10px 6px;
-  }
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  nav a, #theme-toggle {
-    width: 100%;
-    text-align: center;
-    font-size: 1.08em;
-    padding: 10px 0;
-    margin: 0;
-  }
-  #theme-toggle {
-    margin-left: 0;
-    margin-top: 4px;
-    font-size: 1.3em;
-  }
 }
 footer {
   margin-top:40px; color:var(--footer); font-size:0.97em; text-align:center;
