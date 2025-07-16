@@ -262,18 +262,18 @@ footer {
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
     background: var(--table-bg);
   }
-  .main-table,
-  .main-table thead,
-  .main-table tbody,
-  .main-table tr {
+  .main-table.stacked-mobile,
+  .main-table.stacked-mobile thead,
+  .main-table.stacked-mobile tbody,
+  .main-table.stacked-mobile tr {
     display: block;
     box-sizing: border-box;
   }
-  .main-table thead,
-  .main-table th {
+  .main-table.stacked-mobile thead,
+  .main-table.stacked-mobile th {
     display: none !important;
   }
-  .main-table tr {
+  .main-table.stacked-mobile tr {
     margin-bottom: 22px;
     border-radius: 14px;
     background: #2d313a;
@@ -283,7 +283,7 @@ footer {
     transition: box-shadow 0.2s;
     box-sizing: border-box;
   }
-  .main-table td {
+  .main-table.stacked-mobile td {
     display: block;
     font-size: 1.04em;
     padding: 10px 12px 10px 10px;
@@ -292,10 +292,10 @@ footer {
     background: none;
     box-sizing: border-box;
   }
-  .main-table td:last-child {
+  .main-table.stacked-mobile td:last-child {
     border-bottom: none;
   }
-  .main-table td::before {
+  .main-table.stacked-mobile td::before {
     content: attr(data-label);
     font-weight: 700;
     color: var(--table-th-text);
