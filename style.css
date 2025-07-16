@@ -217,8 +217,8 @@ footer {
 }
 @media (max-width: 600px) {
   .container {
-    width: 96vw;
-    max-width: 96vw;
+    width: 100%;
+    max-width: 100%;
     padding: 6vw 2vw;
     margin: 12px auto;
     box-sizing: border-box;
@@ -267,8 +267,6 @@ footer {
   .main-table tbody,
   .main-table tr {
     display: block;
-    width: 100%;
-    max-width: 100%;
     box-sizing: border-box;
   }
   .main-table thead,
@@ -283,13 +281,10 @@ footer {
     border: 1.5px solid var(--table-border);
     padding: 10px 0 6px 0;
     transition: box-shadow 0.2s;
-    max-width: 100%;
     box-sizing: border-box;
   }
   .main-table td {
     display: block;
-    width: 100%;
-    max-width: 100%;
     font-size: 1.04em;
     padding: 10px 12px 10px 10px;
     border: none;
@@ -310,5 +305,8 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.01em;
     opacity: 0.92;
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
   }
 } 
