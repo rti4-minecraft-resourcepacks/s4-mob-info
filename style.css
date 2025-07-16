@@ -154,6 +154,12 @@ nav {
   display: flex;
   align-items: center;
   gap: 18px;
+  justify-content: space-between;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 nav a {
   color: var(--nav-link);
